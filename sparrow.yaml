@@ -2,6 +2,7 @@ tasks:
   -
     name: main
     language: Raku
+    default: true
     code: |
       for config()<tasks><multifetch><stat><> -> \i {
         say "url: {i<url>} - [{i<status>}]";
