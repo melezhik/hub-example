@@ -16,9 +16,9 @@ tasks:
     language: Raku
     code: |
       if "{cache_root_dir()}/status.OK".IO ~~ :e {
-        update_status %( url => config()<url>, status => "OK" );
+        update_state %( url => config()<url>, status => "OK" );
       } else {
-        update_status %( url => config()<url>, status => "FAIL" );
+        update_state %( url => config()<url>, status => "FAIL" );
       }
     init: |
       task_run "fetch"
@@ -32,7 +32,7 @@ tasks:
     hub:
       language: Raku
       code: |
-        update_status %(
+        update_state %(
           list => [
               config => { url => "https://raku.org" },
               config => { url => "https://raku.land" },
