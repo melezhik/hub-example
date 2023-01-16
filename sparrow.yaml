@@ -4,7 +4,7 @@ tasks:
     language: Raku
     default: true
     code: |
-      for config()<tasks><multifetch><stat><> -> \i {
+      for config()<tasks><multifetch><state><> -> \i {
         say "url: {i<url>} - [{i<status>}]";
       }
     depends:
@@ -27,7 +27,7 @@ tasks:
         name: fetch
         language: Bash
         code: |
-          curl -f $(config url) && touch $cache_root_dir/status.OK
+          curl -fs $(config url) -o /dev/null  && touch $cache_root_dir/status.OK
           echo $?
     hub:
       language: Raku
