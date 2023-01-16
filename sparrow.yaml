@@ -21,7 +21,7 @@ tasks:
         update_state %( url => config()<url>, status => "FAIL" );
       }
     init: |
-      task_run "fetch"
+      run_task "fetch"
     subtasks:
       -
         name: fetch
