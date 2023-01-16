@@ -19,7 +19,7 @@ tasks:
       } else {
         update_status %( url => config()<url>, status => "FAIL" );
       }
-    init:
+    init: |
       task_run "fetch"
     subtasks:
       -
